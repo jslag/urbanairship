@@ -54,11 +54,11 @@ module Urbanairship
       do_request(:get, "/api/device_tokens/feedback/?since=#{format_time(time)}", :authenticate_with => :master_secret)
     end
 
-    def self.add_tag(device_token, tag)
+    def add_tag(device_token, tag)
       do_request(:put, "/api/device_tokens/#{device_token}/tags/#{tag}", :authenticate_with => :application_secret)
     end
 
-    def self.remove_tag(device_token, tag)
+    def remove_tag(device_token, tag)
       do_request(:delete, "/api/device_tokens/#{device_token}/tags/#{tag}", :authenticate_with => :application_secret)
     end
 
